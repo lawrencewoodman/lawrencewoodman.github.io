@@ -1,0 +1,22 @@
+---
+layout: default
+menuOption: article
+---
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+    <span class="post-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d'}}">{{ page.date | date_to_long_string }}</time>
+      &nbsp; Tags:
+      {% for tag in page.tags %}
+        <a href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
+      {% endfor %}
+    </span>
+
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>

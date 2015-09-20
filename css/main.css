@@ -1,0 +1,44 @@
+html,body {
+  height: 100%;
+}
+
+div#content {
+  margin-top: 60px;
+}
+
+ul#posts {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+span.post-meta {
+  color: #909090;
+}
+
+div.post-content {
+  line-height: 1.5;
+  margin-top: 1em;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-color: #080808;
+  background-color: #222;
+}
+
+footer h2 {
+  color: #9D9D9D;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+
+footer ul {
+  padding-left: 1em;
+}
+
+footer ul li {
+  list-style: none;
+}
