@@ -19,6 +19,11 @@
         {% if page.menuOption == "article" %}
           <li class="active"><a href="">Article</a></li>
         {% endif %}
+        {% if page.menuOption == "archive" %}
+          <li class="active"><a href="/archive/">Archive</a></li>
+        {% else %}
+          <li><a href="/archive/">Archive</a></li>
+        {% endif %}
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div><!--/.nav-collapse -->
