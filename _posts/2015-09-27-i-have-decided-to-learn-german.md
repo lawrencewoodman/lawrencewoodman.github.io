@@ -6,7 +6,7 @@ tags:
   - Language Learning
 ---
 
-I have wanted to learn to speak another language for a long time, but have either lacked motivation, commitment or felt that I didn't have the time.  I have also had trouble deciding which language to learn as there are a few that I'm interested in for different reasons.  I have decided to post about it on this blog as it may be of interest to people to see the journey.  I'm 38 and from the UK.  The UK has a really bad record as far as learning foreign languages and people often say that learning languages is something best done when young.  I think the latter is just an excuse and the former has more to do with how we learn/don't learn languages here.  Once I succeed it may motivate others to do the same and learn from the process I went through.
+I have wanted to learn to speak another language for a long time, but have either lacked motivation, commitment or felt that I didn't have the time.  I have also had trouble deciding which language to learn as there are a few that I'm interested in for different reasons.  I have decided to post about it on this blog as it may be of interest to people to see the journey.  I'm 38 and from the UK.  The UK has a really bad record as far as learning foreign languages and people often say that learning languages is something best done when young.  I think the latter is just an excuse and the former has more to do with attitude and how we learn/don't learn languages here.  Once I succeed it may motivate others to do the same and learn from the process I went through.
 
 ## Reasons for Learning German
 
