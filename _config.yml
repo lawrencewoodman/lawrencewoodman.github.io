@@ -9,3 +9,6 @@ url: "http://lawrencewoodman.github.io" # the base hostname & protocol for your 
 
 # Build settings
 markdown: kramdown
+
+gems:
+ - jekyll-feed
