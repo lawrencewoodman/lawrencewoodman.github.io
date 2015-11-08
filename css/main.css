@@ -25,6 +25,34 @@ p#rss-subscribe {
   margin-top: 2em;
 }
 
+
+div#frontPage {
+  margin-top: 2em;
+}
+
+div#frontPage div.screenshot a {
+  color: black;
+}
+
+div#frontPage div.screenshot a:hover {
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div#frontPage div.screenshot a p {
+  margin-top: 1em;
+  line-height: 1.5;
+}
+
+div#frontPage ul {
+  padding-left: 1em;
+}
+
+div#frontPage ul li {
+  list-style: none;
+}
+
 footer {
   margin-top: 50px;
   padding-top: 20px;

@@ -3,4 +3,46 @@ layout: default
 menuOption: home
 ---
 
-{% include footer.html %}
+<div id="frontPage" class="container" itemtype="http://schema.org/Person" itemscope="">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="/images/profile.jpeg" class="img-responsive" itemprop="image">
+      <h3 itemprop="name">Lawrence Woodman</h3>
+      <ul>
+        <li><a href="mailto:lwoodman@vlifesystems.com">Email: <span itemprop="email">lwoodman@vlifesystems.com</span></a></li>
+        <li><a href="http://twitter.com/lorrywoodman">Twitter: @lorrywoodman</a></li>
+        <li><a href="https://github.com/lawrencewoodman">Github</a></li>
+        <li><a href="https://www.youtube.com/user/LawrenceWoodman">YouTube</a></li>
+       <li><a href="http://uk.linkedin.com/in/lawrencewoodman">LinkedIn</a></li>
+       <li><a href="http://stackoverflow.com/users/635293/lawrence-woodman">StackOverflow</a></li>
+       <li><a href="https://profiles.google.com/u/0/108308415056519393766/" rel="me">Google+</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-3 screenshot">
+      <a href="/blog/">
+        <h3>My Personal Blog</h3>
+        <img src="/images/personalblog_screenshot.png" class="img-responsive" itemprop="image">
+        <p>This is where I write about non-technical things that interest me.</p>
+      </a>
+    </div>
+
+    <div class="col-md-3 screenshot">
+      <a href="http://techtinkering.com">
+        <h3>TechTinkering</h3>
+        <img src="/images/techtinkering_screenshot.png" class="img-responsive" itemprop="image">
+        <p>Here I write about vintage computers, programming and general
+        technical tinkering.</p>
+      </a>
+    </div>
+
+    <div class="col-md-3 screenshot" itemtype="http://schema.org/Organization" itemscope="" itemprop="worksFor">
+      <a href="http://vlifesystems.com" itemprop="url">
+        <h3 itemprop="name">vLife Systems Ltd</h3>
+        <img src="/images/vlifesystems_screenshot.png" class="img-responsive" itemprop="image">
+        <p>My software development company, based in Bristol.</p>
+      </a>
+    </div>
+
+  </div>
+</div>
