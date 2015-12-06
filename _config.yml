@@ -8,6 +8,8 @@ permalink:   /blog/:year/:month/:day/:title
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://lawrencewoodman.github.io" # the base hostname & protocol for your site
 destination: ../master
+tag_dir: /blog/archive/tag
+tag_title_prefix: "Articles tagged with: "
 
 exclude: [design]
 

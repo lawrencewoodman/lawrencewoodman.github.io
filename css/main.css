@@ -43,6 +43,17 @@ div#related ul li {
   line-height: 1.3;
 }
 
+div#taggedArticles ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div#taggedArticles ul li {
+  padding-bottom: 1em;
+  line-height: 1.3;
+}
+
 div#frontPage {
   margin-top: 2em;
 }
