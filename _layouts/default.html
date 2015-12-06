@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+    <div id="content" class="container">
+      {{ content }}
+    </div><!-- /.container -->
+
+    {% if page.menuOption != "home" %}
+      {% include footer.html %}
+    {% endif %}
+  </body>
+</html>

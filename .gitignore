@@ -1,0 +1,5 @@
+# Vi files
+*.swp
+
+_site
+.sass-cache
