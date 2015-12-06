@@ -25,6 +25,23 @@ p#rss-subscribe {
   margin-top: 2em;
 }
 
+div#related {
+  margin-top: 2em;
+  border-top: #AAA solid 1px;
+  border-bottom: #AAA solid 1px;
+}
+
+div#related ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 130%;
+}
+
+div#related ul li {
+  padding-bottom: 1em;
+  line-height: 1.3;
+}
 
 div#frontPage {
   margin-top: 2em;
