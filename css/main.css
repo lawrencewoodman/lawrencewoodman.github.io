@@ -25,10 +25,18 @@ p#rss-subscribe {
   margin-top: 2em;
 }
 
-div#related {
-  margin-top: 2em;
+div#licence {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 1em;
   border-top: #AAA solid 1px;
   border-bottom: #AAA solid 1px;
+  background-color: #E7E7E7;
+}
+
+
+div#related {
+  margin-top: 2em;
 }
 
 div#related ul {
@@ -102,7 +110,7 @@ footer ul li {
 }
 
 div#footer {
-  border: 1px solid #BBB;
+  border: 1px solid #AAA;
   background-color: #E7E7E7;
   padding: 20px;
 }
