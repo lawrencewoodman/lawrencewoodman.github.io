@@ -6,6 +6,40 @@ div#content {
   margin-top: 60px;
 }
 
+img.logo-youtube {
+  display: inline-block;
+  height: 70px;
+}
+
+img.logo-twitter {
+  display: inline-block;
+  height: 60px;
+}
+
+
+img.logo-github {
+  display: inline-block;
+  height: 40px;
+}
+
+img.logo-linkedin {
+  display: inline-block;
+  height: 30px;
+}
+
+img.logo-stackoverflow {
+  display: inline-block;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+img.logo-gplus {
+  display: inline-block;
+  height: 40px;
+}
+
 ul.posts {
   padding: 0;
   margin: 0;
