@@ -123,6 +123,16 @@ div#frontPage ul li {
   list-style: none;
 }
 
+div#frontPage div.profile a {
+  color: black;
+}
+
+
+div#frontPage div.profile a:hover {
+  color: #444;
+  text-decoration: none;
+}
+
 footer {
   margin-top: 50px;
   padding-top: 20px;
