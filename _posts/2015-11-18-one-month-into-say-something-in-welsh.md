@@ -19,7 +19,7 @@ One thing that really demonstrates to me how friendly and inclusive the course a
 
 
 ## What Next
-I would like to learn to read Welsh and see more written down as then I could quickly look things up, particularly when phrases are said that have lots of similar sounds close together.  There are also times when I can read but not listen to audio and the extra practise would, I think, help reinforce what I have been learning and speed up my progress.  I intend to get <a rel="nofollow" href="http://www.amazon.co.uk/gp/product/113896039X/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=113896039X&linkCode=as2&tag=lawrencewoodman-21">Colloquial Welsh: The Complete Course for Beginners</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=lawrencewoodman-21&l=as2&o=2&a=113896039X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, which I hope will complement the SSiW course.
+I would like to learn to read Welsh and see more written down as then I could quickly look things up, particularly when phrases are said that have lots of similar sounds close together.  There are also times when I can read but not listen to audio and the extra practise would, I think, help reinforce what I have been learning and speed up my progress.  I intend to get _Colloquial Welsh: The Complete Course for Beginners_, which I hope will complement the SSiW course.
 
 I would also enjoy being able to watch videos on YouTube building up from simple Welsh to more complex use of the language and will investigate what is available.  I think this would be particularly good to use where I have done my SSiW practise in the day and would like to do a little extra in the evening at a more relaxed pace.
 
