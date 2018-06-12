@@ -1,0 +1,16 @@
+!* commandSubst true
+<ul class="posts">
+! set numPosts 0
+! foreach post [getparams posts] {
+!   incr numPosts
+!   if {$numPosts >= 15} {
+!     break
+!   }
+    <li>
+      [ornament [read -directory [getvar build includes] post_summary.html] $post]
+    </li>
+! }
+</ul>
+
+
+  <p id="rss-subscribe">Subscribe <a href="[getvar site baseurl]/feed.xml">via Atom</a></p>

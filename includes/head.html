@@ -1,0 +1,51 @@
+!* commandSubst true variableSubst true
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+! set title [getparams title]
+! if {[string length $title] == 0} {
+!   set title [getvar site title]
+! }
+! set desc [getvar site description]
+
+! set desc [getparams summary]
+! if {[string length $desc] == 0} {
+!   set desc [getvar site description]
+! } else {
+!   set desc [string range $desc 0 160]
+!# TODO: Note use of stripNewLines [stripNewLines [stripHTML $desc]] 160]
+! }
+
+! set canonicalURL [format "%s%s%s" \
+!   [getvar site url] \
+!   [getvar site baseurl] \
+!   [getparams url] \
+! ]
+! set indexPos [string last "index.html" $canonicalURL]
+! if {$indexPos >= 0 } {
+!   set canonicalURL [string range $canonicalURL 0 $indexPos]
+! }
+
+
+
+  <title>$title</title>
+  <meta name="description" content="$desc">
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+
+  <link rel="canonical" href="$canonicalURL">
+  <link rel="alternate" type="application/rss+xml" title="[getvar site title]"
+        href="[getvar site url][getvar site baseurl]/feed.xml" />
+
+!* commandSubst false
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>

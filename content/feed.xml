@@ -1,0 +1,54 @@
+!* commandSubst true
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>[getvar site title]</title>
+! if {[getvar site subtitle] ne ""} {
+  <subtitle>[getvar site subtitle]</subtitle>
+! }
+  <link href="[getvar site url][getvar site baseurl]/feed.xml" rel="self"/>
+  <link href="[getvar site url][getvar site baseurl]"/>
+  <updated>[clock format [clock seconds] -format {%Y-%m-%d}]</updated>
+  <id>[getvar site url][getvar site baseurl]/feed.xml</id>
+! if {[getvar site author] ne ""} {
+    <author>
+      <name>[getvar site author name]</name>
+      <email>[getvar site author email]</email>
+      <uri>[getvar site author url]</uri>
+    </author>
+! }
+  <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+! foreach post [getparams posts] {
+    <entry>
+      <title>[dict get $post title]</title>
+      <id>[getvar site url][getvar site baseurl][dict get $post url]</id>
+      <link href="[getvar site url][getvar site baseurl][dict get $post url]"/>
+!     if {[dict exists $post author]} {
+        <author>
+          <name>[dict get $post author name]</name>
+          <email>[dict get $post author email]</email>
+          <uri>[dict get $post author url]</uri>
+        </author>
+!     }
+!     if {[dict exists $post date]} {
+        <published>
+          [clock format [dict get $post date] -format {%Y-%m-%d}]
+        </published>
+!     }
+
+!     if {[dict exists $post update]} {
+        <updated>
+          [clock format [dict get $post update] -format {%Y-%m-%d}]
+        </updated>
+!     } elseif {[dict exists $post date]} {
+        <updated>
+          [clock format [dict get $post date] -format {%Y-%m-%d}]
+        </updated>
+!     } else {
+        <updated>[clock format [clock seconds] -format {%Y-%m-%d}]</updated>
+!     }
+
+!     if {[dict exists $post summary]} {
+        <summary>[dict get $post summary]</summary>
+!     }
+    </entry>
+! }
+</feed>
