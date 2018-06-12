@@ -31,14 +31,20 @@
 </div>
 
 
-!# TODO: Implement releated posts
-!# {% if site.related_posts.size >= 1 %}
-!#   <div id="related">
-!#   <h2>Related Articles</h2>
-!#   <ul>
-!#     {% for post in site.related_posts limit: 5 %}
-!#       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-!#     {% endfor %}
-!#   </ul>
-!#   </div>
-!# {% endif %}
+! if {[llength [getparams relatedPosts]] >= 1} {
+    <div id="related">
+      <h2>Related Articles</h2>
+      <ul>
+!     set i 0
+!     foreach post [getparams relatedPosts] {
+!       if {$i < 5} {
+          <li>
+            <a href="[getvar site baseurl][dict get $post url]">
+              [dict get $post title]
+            </a>
+          </li>
+!       }
+!     }
+      </ul>
+    </div>
+! }
