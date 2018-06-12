@@ -1,16 +1,10 @@
 !* commandSubst true variableSubst true
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
 ! set title [getparams title]
 ! if {[string length $title] == 0} {
 !   set title [getvar site title]
 ! }
 ! set desc [getvar site description]
-
+!
 ! set desc [getparams summary]
 ! if {[string length $desc] == 0} {
 !   set desc [getvar site description]
@@ -18,7 +12,7 @@
 !   set desc [string range $desc 0 160]
 !# TODO: Note use of stripNewLines [stripNewLines [stripHTML $desc]] 160]
 ! }
-
+!
 ! set canonicalURL [format "%s%s%s" \
 !   [getvar site url] \
 !   [getvar site baseurl] \
@@ -28,15 +22,15 @@
 ! if {$indexPos >= 0 } {
 !   set canonicalURL [string range $canonicalURL 0 $indexPos]
 ! }
-
-
-
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>$title</title>
   <meta name="description" content="$desc">
-
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
-
   <link rel="canonical" href="$canonicalURL">
   <link rel="alternate" type="application/rss+xml" title="[getvar site title]"
         href="[getvar site url][getvar site baseurl]/feed.xml" />

@@ -2,9 +2,7 @@
 ! source -directory plugins include.tcl
 <!DOCTYPE html>
 <html>
-
- [include head.html]
-
+  [include head.html]
   <body>
     [include header.html]
     <div id="content" class="container">
@@ -16,4 +14,3 @@
 !   }
   </body>
 </html>
-
