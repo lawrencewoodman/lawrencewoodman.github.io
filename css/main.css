@@ -6,6 +6,10 @@ div#content {
   margin-top: 60px;
 }
 
+.star-rating {
+  flush: both
+}
+
 img.logo-youtube {
   display: inline-block;
   height: 70px;
