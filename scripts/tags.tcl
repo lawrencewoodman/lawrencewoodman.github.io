@@ -17,7 +17,7 @@ set allPosts [lsort \
   [collection posts]
 ]
 
-set tags [collection tags]
-log info "scripts/tags.tcl - tags: $tags"
-
-tags::generatePages $allPosts writeTagPage [collection tags]
+set files [read -directory [file join [getvar build content] posts] \
+          details.list]
+set tags [tags::collect tags $files]
+tags::generatePages $allPosts writeTagPage $tags

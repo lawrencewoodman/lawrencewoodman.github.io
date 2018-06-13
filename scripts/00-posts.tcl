@@ -1,46 +1,6 @@
-set files {
-  { filename      2015-01-01-books-read-in-2015.md
-    title         "Books Read in 2015"
-    tags          {"Book Reviews"}
-  }
-
-  { filename      2015-09-27-i-have-decided-to-learn-german.md
-    title         "I Have Decided to Learn German"
-    tags          {"German" "Language Learning"}
-  }
-
-  { filename      2015-10-18-change-of-plan-im-learning-welsh.md
-    title         "Change of Plan, I'm Learning Welsh"
-    tags          {"Welsh" "Language Learning"}
-  }
-
-  { filename      2015-11-18-one-month-into-say-something-in-welsh.md
-    title         "One Month into Say Something in Welsh Course"
-    tags          {"Welsh" "Language Learning"}
-  }
-
-  { filename      2016-07-31-ten-months-into-learning-welsh.md
-    title         "Ten Months into Learning Welsh"
-    tags          {"Welsh" "Language Learning"}
-  }
-
-  { filename      2017-01-01-books-read-in-2016.md
-    title         "Books Read in 2016"
-    tags          {"Book Reviews"}
-  }
-
-  { filename      2017-06-12-the-reading-lesson-teach-your-child-to-read-in-20-easy-lessons.md
-    title         "Book Review: The Reading Lesson - Teach your child to read in 20 easy lessons by Michael Levin and Charan Langton"
-    tags          {"Book Reviews"}
-  }
-}
-
-# TODO: sort in date order
-
 source -directory [getvar build plugins] posts.tcl
 source -directory [getvar build plugins] layout.tcl
 source -directory [getvar build plugins] tags.tcl
-set blogURL /blog
 
 proc makePartialContent {file filename} {
   set content [ornament [read $filename] $file]
@@ -78,7 +38,10 @@ proc makeRelatedPosts {files file} {
   return [lmap x $relatedFileStats {lindex $x 1}]
 }
 
-tags::collect tags $files
+# TODO: sort in date order
+set files [read -directory [file join [getvar build content] posts] \
+          details.list]
+set blogURL /blog
 
 set files [lmap file $files {
   dict set file filename [

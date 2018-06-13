@@ -33,4 +33,5 @@ proc tags::collect {collectionName files} {
       }
     }
   }
+  return $allTags
 }
