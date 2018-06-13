@@ -1,3 +1,4 @@
+source -directory [getvar build plugins] layout.tcl
 source -directory plugins tags.tcl
 
 proc writeTagPage {tag posts} {
@@ -6,9 +7,8 @@ proc writeTagPage {tag posts} {
   set params [dict create \
     menuOption blog tag $tag posts $posts title "Articles tagged with: $tag" \
   ]
-  dict set params content [ornament [read $src] $params]
-  set content [ornament [read [file join layouts default.tpl]] $params]
-  write $destination $content
+  set content [ornament [read $src] $params]
+  write $destination [layout::render default.tpl $content $params]
 }
 
 set allPosts [lsort \
@@ -20,5 +20,4 @@ set allPosts [lsort \
 set tags [collection tags]
 log info "scripts/tags.tcl - tags: $tags"
 
-set params [dict create menuOption blog]
 tags::generatePages $allPosts writeTagPage [collection tags]

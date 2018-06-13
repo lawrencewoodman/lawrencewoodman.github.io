@@ -37,18 +37,13 @@ set files {
 
 # TODO: sort in date order
 
-source -directory plugins posts.tcl
+source -directory [getvar build plugins] posts.tcl
+source -directory [getvar build plugins] layout.tcl
 set blogURL /blog
 
 proc makePartialContent {file filename} {
   set content [ornament [read $filename] $file]
   return [markdownify $content]
-}
-
-proc makeContent {file partialContent} {
-  dict set file content $partialContent
-  dict set file content [ornament [read [file join layouts post.tpl]] $file]
-  return [ornament [read [file join layouts default.tpl]] $file]
 }
 
 # Return any files related to the supplied file
@@ -111,6 +106,7 @@ foreach file $files {
   set partialContent [makePartialContent $file [dict get $file filename]]
   dict set file summary [posts::makeExcerpt $partialContent]
   dict set file relatedPosts [makeRelatedPosts $files $file]
-  write [dict get $file destination] [makeContent $file $partialContent]
+  write [dict get $file destination] \
+        [layout::render post.tpl $partialContent $file]
   collect posts $file
 }

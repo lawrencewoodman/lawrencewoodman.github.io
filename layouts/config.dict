@@ -1,0 +1,4 @@
+post.tpl {
+  layout default.tpl
+}
+default.tpl {}

@@ -2,6 +2,8 @@ build {
   destination ../master
   content content
   includes includes
+  layouts layouts
+  plugins plugins
   scripts scripts
   markdown {
     cmd cmark-gfm
