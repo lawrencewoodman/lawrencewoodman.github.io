@@ -8,7 +8,6 @@ proc tags::toDirName {tag} {
 }
 
 proc tags::generatePages {files writeCommand {tags {}}} {
-  log info "tag::generatePages tags: $tags"
   foreach tag $tags {
     set tagFiles [list]
     set tagFileIndices [list]
@@ -21,5 +20,17 @@ proc tags::generatePages {files writeCommand {tags {}}} {
       }
     }
     $writeCommand $tag $tagFiles
+  }
+}
+
+proc tags::collect {collectionName files} {
+  set allTags [list]
+  foreach file $files {
+    foreach tag [dict get $file tags] {
+      if {[lsearch $allTags $tag] == -1} {
+        lappend allTags $tag
+        ::collect $collectionName $tag
+      }
+    }
   }
 }

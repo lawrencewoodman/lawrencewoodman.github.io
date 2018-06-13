@@ -39,6 +39,7 @@ set files {
 
 source -directory [getvar build plugins] posts.tcl
 source -directory [getvar build plugins] layout.tcl
+source -directory [getvar build plugins] tags.tcl
 set blogURL /blog
 
 proc makePartialContent {file filename} {
@@ -77,17 +78,7 @@ proc makeRelatedPosts {files file} {
   return [lmap x $relatedFileStats {lindex $x 1}]
 }
 
-set allTags [list]
-foreach file $files {
-  foreach tag [dict get $file tags] {
-    if {[lsearch $allTags $tag] == -1} {
-      lappend allTags $tag
-      log info "collecting tags: $tag"
-      collect tags $tag
-    }
-  }
-}
-log info "tags: $allTags"
+tags::collect tags $files
 
 set files [lmap file $files {
   dict set file filename [
