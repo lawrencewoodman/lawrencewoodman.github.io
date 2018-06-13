@@ -1,17 +1,7 @@
 !* commandSubst true variableSubst true
-! set title [getparams title]
-! if {[string length $title] == 0} {
-!   set title [getvar site title]
-! }
-! set desc [getvar site description]
-!
-! set desc [getparams summary]
-! if {[string length $desc] == 0} {
-!   set desc [getvar site description]
-! } else {
-!   set desc [string range $desc 0 160]
-!# TODO: Note use of stripNewLines [stripNewLines [stripHTML $desc]] 160]
-! }
+! set title [getparams -default [getvar site title] title]
+! set desc [getparams -default [getvar site description] summary]
+! set desc [string range $desc 0 160]
 !
 ! set canonicalURL [format "%s%s%s" \
 !   [getvar site url] \
