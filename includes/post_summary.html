@@ -19,13 +19,9 @@
 !   }
   </span>
 </header>
-! if {[getparams menuOption] eq "archive"} {
-  <div>{{ post.content|markdownify|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
-! } else {
-  <div>[getparams summary] &nbsp;
-    <a class="readMore" href="[getvar site baseurl][getparams url]">
-      Read More
-    </a>
-  </div>
-! }
+<div>[getparams summary] &nbsp;
+  <a class="readMore" href="[getvar site baseurl][getparams url]">
+    Read More
+  </a>
+</div>
 <br />
