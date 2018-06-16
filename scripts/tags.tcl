@@ -1,9 +1,14 @@
-source -directory [getvar build plugins] layout.tcl
+source -directory plugins layout.tcl
 source -directory plugins tags.tcl
 
 proc writeTagPage {tag posts} {
-  set src [file join [getvar build content] blog tag.html]
-  set destination [file join / blog tag [tags::toDirName $tag] index.html]
+  set src [file join content blog tag.html]
+  set tagDirName [tags::toDirName $tag]
+  set destination [file join \
+      [getvar build destination] \
+      [getvar site baseurl] \
+      blog tag $tagDirName index.html
+  ]
   set params [dict create \
     menuOption blog tag $tag posts $posts \
     url /blog/tag/$tagDirName/index.html \
@@ -19,7 +24,7 @@ set allPosts [lsort \
   [collection posts]
 ]
 
-set files [read -directory [file join [getvar build content] posts] \
+set files [read -directory [file join content posts] \
           details.list]
 set tags [tags::collect tags $files]
 tags::generatePages $allPosts writeTagPage $tags

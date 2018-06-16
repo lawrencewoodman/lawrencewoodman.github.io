@@ -1,14 +1,19 @@
+!* commandSubst true
 build {
-  destination ../master
-  content content
-  includes includes
-  layouts layouts
-  plugins plugins
-  scripts scripts
+  dirs {
+    {[file join .. master] w}
+    {content r}
+    {includes r}
+    {layouts r}
+    {plugins r}
+    {scripts r}
+  }
+  destination [file join .. master]
   markdown {
     cmd cmark-gfm
   }
 }
+!* commandSubst false
 site {
   title "Lawrence Woodman"
   subtitle "Random things that catch my eye that don't have a natural home elsewhere."

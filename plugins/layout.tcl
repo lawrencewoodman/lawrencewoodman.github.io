@@ -1,7 +1,7 @@
 namespace eval layout {
   namespace export {[a-z]*}
   namespace ensemble create
-  variable config [read -directory [getvar build layouts] config.dict]
+  variable config [read -directory layouts config.dict]
 }
 
 proc layout::render {layoutFilename content params} {
@@ -11,7 +11,7 @@ proc layout::render {layoutFilename content params} {
   if {![dict exists $config $layoutFilename]} {
     return -code error "unknown layout: $layoutFilename"
   }
-  set tpl [read -directory [getvar build layouts] $layoutFilename]
+  set tpl [read -directory layouts $layoutFilename]
   dict set params content $content
   set content [ornament $tpl $params]
   if {![dict exists $config $layoutFilename layout]} {

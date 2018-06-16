@@ -29,24 +29,24 @@ proc posts::makeExcerpt {partialContent} {
   return [string range [strip_html $partialContent] 0 300]
 }
 
-proc posts::makeDestination {blogURL filename} {
+proc posts::makeDestination {filename} {
   set filename [file tail $filename]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return [file join $blogURL $year $month $day $titleDir index.html]
+    return [file join $year $month $day $titleDir index.html]
   }
   # TODO: Raise an error
 }
 
-proc posts::makeURL {blogURL filename} {
+proc posts::makeURL {filename} {
   set filename [file tail $filename]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return "$blogURL/$year/$month/$day/$titleDir/"
+    return "$year/$month/$day/$titleDir/"
   }
   # TODO: Raise an error
 }

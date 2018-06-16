@@ -1,4 +1,4 @@
-source -directory [getvar build plugins] layout.tcl
+source -directory plugins layout.tcl
 set posts [lsort \
   -command {apply {{a b} {expr {[dict get $a date] - [dict get $b date]}}}} \
   -decreasing \
