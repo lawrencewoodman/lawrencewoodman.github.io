@@ -5,12 +5,15 @@ set posts [lsort \
   [collection posts]
 ]
 
-set src [file join content blog index.html]
 set destination [file join \
     [getvar build destination] \
     [getvar site baseurl] \
     blog index.html
 ]
 set params [dict create menuOption blog url /blog/index.html posts $posts]
-set content [ornament [read $src] $params]
+set content [ornament \
+    -params $params \
+    -directory [file join content blog] \
+    index.html
+]
 write $destination [layout::render default.tpl $content $params]

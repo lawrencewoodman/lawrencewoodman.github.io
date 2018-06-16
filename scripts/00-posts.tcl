@@ -3,7 +3,11 @@ source -directory plugins layout.tcl
 source -directory plugins tags.tcl
 
 proc makePartialContent {file filename} {
-  set content [ornament [read $filename] $file]
+  set content [ornament \
+      -params $file \
+      -directory [file join content posts] \
+      $filename
+  ]
   return [markdownify $content]
 }
 
@@ -11,9 +15,6 @@ proc makePartialContent {file filename} {
 set files [read -directory [file join content posts] details.list]
 
 set files [lmap file $files {
-  dict set file filename [
-    file join content posts [dict get $file filename] \
-  ]
   dict set file destination [file join \
       [getvar build destination] \
       [getvar site baseurl] \

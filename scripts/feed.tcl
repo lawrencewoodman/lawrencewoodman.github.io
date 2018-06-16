@@ -4,12 +4,11 @@ set posts [lsort \
   [collection posts]
 ]
 
-set src [file join content feed.xml]
 set destination [file join \
     [getvar build destination] \
     [getvar site baseurl] \
     feed.xml
 ]
-set vars [dict create posts $posts]
-set content [ornament [read $src] $vars]
+set params [dict create posts $posts]
+set content [ornament -params $params -directory content feed.xml]
 write $destination $content

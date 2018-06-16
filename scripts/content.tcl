@@ -1,5 +1,4 @@
 source -directory plugins layout.tcl
-set src [file join content index.html]
 set destination [file join \
     [getvar build destination] \
     [getvar site baseurl] \
@@ -7,5 +6,9 @@ set destination [file join \
 ]
 
 set params [dict create menuOption home url /index.html]
-set content [ornament [read $src] $params]
+set content [ornament \
+    -params $params \
+    -directory content \
+    index.html
+]
 write $destination [layout::render default.tpl $content $params]

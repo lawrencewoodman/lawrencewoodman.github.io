@@ -1,3 +1,3 @@
 proc include {filename} {
- return [ornament [read -directory includes $filename] [getparams]]
+ return [ornament -params [getparams] -directory includes $filename]
 }

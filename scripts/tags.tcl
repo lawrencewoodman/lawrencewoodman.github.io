@@ -2,7 +2,6 @@ source -directory plugins layout.tcl
 source -directory plugins tags.tcl
 
 proc writeTagPage {tag posts} {
-  set src [file join content blog tag.html]
   set tagDirName [tags::toDirName $tag]
   set destination [file join \
       [getvar build destination] \
@@ -14,7 +13,11 @@ proc writeTagPage {tag posts} {
     url /blog/tag/$tagDirName/index.html \
     title "Articles tagged with: $tag" \
   ]
-  set content [ornament [read $src] $params]
+  set content [ornament \
+      -params $params \
+      -directory [file join content blog] \
+      tag.html
+  ]
   write $destination [layout::render default.tpl $content $params]
 }
 
