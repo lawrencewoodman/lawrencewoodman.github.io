@@ -1,14 +1,14 @@
 !* commandSubst true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>[getvar site title]</title>
-! if {[getvar site subtitle] ne ""} {
+! if {[getvar -noerror site subtitle] ne ""} {
   <subtitle>[getvar site subtitle]</subtitle>
 ! }
   <link href="[getvar site url][getvar site baseurl]/feed.xml" rel="self"/>
   <link href="[getvar site url][getvar site baseurl]"/>
   <updated>[clock format [clock seconds] -format {%Y-%m-%d}]</updated>
   <id>[getvar site url][getvar site baseurl]/feed.xml</id>
-! if {[getvar site author] ne ""} {
+! if {[getvar -noerror site author] ne ""} {
     <author>
       <name>[getvar site author name]</name>
       <email>[getvar site author email]</email>

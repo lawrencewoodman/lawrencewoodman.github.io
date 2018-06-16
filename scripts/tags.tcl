@@ -5,7 +5,9 @@ proc writeTagPage {tag posts} {
   set src [file join [getvar build content] blog tag.html]
   set destination [file join / blog tag [tags::toDirName $tag] index.html]
   set params [dict create \
-    menuOption blog tag $tag posts $posts title "Articles tagged with: $tag" \
+    menuOption blog tag $tag posts $posts \
+    url /blog/tag/$tagDirName/index.html \
+    title "Articles tagged with: $tag" \
   ]
   set content [ornament [read $src] $params]
   write $destination [layout::render default.tpl $content $params]

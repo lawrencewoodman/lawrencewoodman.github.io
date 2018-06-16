@@ -1,17 +1,8 @@
 !* commandSubst true variableSubst true
+! source -directory plugins www.tcl
 ! set title [getparams -default [getvar site title] title]
 ! set desc [getparams -default [getvar site description] summary]
 ! set desc [string range $desc 0 160]
-!
-! set canonicalURL [format "%s%s%s" \
-!   [getvar site url] \
-!   [getvar site baseurl] \
-!   [getparams url] \
-! ]
-! set indexPos [string last "index.html" $canonicalURL]
-! if {$indexPos >= 0 } {
-!   set canonicalURL [string range $canonicalURL 0 $indexPos]
-! }
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +12,7 @@
   <meta name="description" content="$desc">
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
-  <link rel="canonical" href="$canonicalURL">
+  <link rel="canonical" href="[www::canonicalURL [getparams url]]">
   <link rel="alternate" type="application/rss+xml" title="[getvar site title]"
         href="[getvar site url][getvar site baseurl]/feed.xml" />
 
