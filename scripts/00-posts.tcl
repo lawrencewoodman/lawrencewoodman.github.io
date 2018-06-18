@@ -8,7 +8,7 @@ proc makePartialContent {file filename} {
       -directory [file join content posts] \
       $filename
   ]
-  return [markdownify $content]
+  return [markdown $content]
 }
 
 # TODO: sort in date order
