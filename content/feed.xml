@@ -16,7 +16,7 @@
     </author>
 ! }
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
-! foreach post [getparams posts] {
+! foreach post [getparam posts] {
     <entry>
       <title>[dict get $post title]</title>
       <id>[getvar site url][getvar site baseurl][dict get $post url]</id>

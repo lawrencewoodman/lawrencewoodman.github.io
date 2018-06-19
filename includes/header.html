@@ -12,17 +12,17 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-!       if {[getparams menuOption] eq "home"} {
+!       if {[getparam menuOption] eq "home"} {
           <li class="active"><a href="/">Home</a></li>
 !       } else {
           <li><a href="/">Home</a></li>
 !       }
-!       if {[getparams menuOption] eq "blog"} {
+!       if {[getparam menuOption] eq "blog"} {
           <li class="active"><a href="/blog/">Blog</a></li>
 !       } else {
           <li><a href="/blog/">Blog</a></li>
 !       }
-!       if {[getparams menuOption] eq "article"} {
+!       if {[getparam menuOption] eq "article"} {
           <li class="active"><a href="">Article</a></li>
 !       }
       </ul>

@@ -6,10 +6,10 @@
   <body>
     [include header.html]
     <div id="content" class="container">
-      [getparams content]
+      [getparam content]
     </div><!-- /.container -->
 
-!   if {[getparams menuOption] ne "home"} {
+!   if {[getparam menuOption] ne "home"} {
       [include footer.html]
 !   }
   </body>
