@@ -6,14 +6,14 @@ set posts [lsort \
 ]
 
 set destination [file join \
-    [getvar build destination] \
+    [dir destination] \
     [getvar site baseurl] \
     blog index.html
 ]
 set params [dict create menuOption blog url /blog/index.html posts $posts]
 set content [ornament \
     -params $params \
-    -directory [file join content blog] \
+    -directory [dir content blog] \
     index.html
 ]
 write $destination [layout::render default.tpl $content $params]

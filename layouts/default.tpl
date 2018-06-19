@@ -1,5 +1,5 @@
 !* commandSubst true
-! source -directory plugins include.tcl
+! source -directory [dir plugins] include.tcl
 <!DOCTYPE html>
 <html>
   [include head.html]

@@ -5,7 +5,7 @@ set posts [lsort \
 ]
 
 set destination [file join \
-    [getvar build destination] \
+    [dir destination] \
     [getvar site baseurl] \
     feed.xml
 ]

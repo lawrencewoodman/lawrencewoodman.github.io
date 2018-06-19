@@ -12,7 +12,9 @@ proc layout::render {layoutFilename content params} {
     return -code error "unknown layout: $layoutFilename"
   }
   dict set params content $content
-  set content [ornament -params $params -directory layouts $layoutFilename]
+  set content [
+    ornament -params $params -directory [dir layouts] $layoutFilename
+  ]
   if {![dict exists $config $layoutFilename layout]} {
     return $content
   }

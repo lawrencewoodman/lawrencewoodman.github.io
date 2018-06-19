@@ -1,18 +1,18 @@
 proc makeDestinationDir {dir} {
-  return [file join [getvar build destination] [getvar site baseurl] $dir]
+  return [file join [dir destination] [getvar site baseurl] $dir]
 }
 
-set cssDir [file join content css]
+set cssDir [dir content css]
 file copy [file join $cssDir *.css] \
           [file join $cssDir *.map] \
           [makeDestinationDir css]
 
-set imagesDir [file join content images]
+set imagesDir [dir content images]
 file copy [file join $imagesDir *.png] \
           [file join $imagesDir *.jpeg] \
           [makeDestinationDir images]
 
-set fontsDir [file join content fonts]
+set fontsDir [dir content fonts]
 file copy [file join $fontsDir *.eot] \
           [file join $fontsDir *.woff] \
           [file join $fontsDir *.svg] \
@@ -20,5 +20,5 @@ file copy [file join $fontsDir *.eot] \
           [file join $fontsDir *.ttf] \
           [makeDestinationDir fonts]
 
-set jsDir [file join content js]
+set jsDir [dir content js]
 file copy [file join $jsDir *.js] [makeDestinationDir js]

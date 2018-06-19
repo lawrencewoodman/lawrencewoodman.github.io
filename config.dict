@@ -1,14 +1,13 @@
 !* commandSubst true
 build {
   dirs {
-    {[file join .. master] w}
-    {content r}
-    {includes r}
-    {layouts r}
-    {plugins r}
-    {scripts r}
+    {destination [file join .. master] w}
+    {content content r}
+    {includes includes r}
+    {layouts layouts r}
+    {plugins plugins r}
+    {scripts scripts r}
   }
-  destination [file join .. master]
   markdown {
     cmd cmark-gfm
   }

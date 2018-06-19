@@ -1,10 +1,10 @@
-source -directory plugins layout.tcl
-source -directory plugins tags.tcl
+source -directory [dir plugins] layout.tcl
+source -directory [dir plugins] tags.tcl
 
 proc writeTagPage {tag posts} {
   set tagDirName [tags::toDirName $tag]
   set destination [file join \
-      [getvar build destination] \
+      [dir destination] \
       [getvar site baseurl] \
       blog tag $tagDirName index.html
   ]
@@ -15,7 +15,7 @@ proc writeTagPage {tag posts} {
   ]
   set content [ornament \
       -params $params \
-      -directory [file join content blog] \
+      -directory [dir content blog] \
       tag.html
   ]
   write $destination [layout::render default.tpl $content $params]
@@ -27,7 +27,6 @@ set allPosts [lsort \
   [collection posts]
 ]
 
-set files [read -directory [file join content posts] \
-          details.list]
+set files [read -directory [dir content posts] details.list]
 set tags [tags::collect tags $files]
 tags::generatePages $allPosts writeTagPage $tags

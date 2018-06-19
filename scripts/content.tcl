@@ -1,6 +1,6 @@
 source -directory plugins layout.tcl
 set destination [file join \
-    [getvar build destination] \
+    [dir destination] \
     [getvar site baseurl] \
     index.html
 ]

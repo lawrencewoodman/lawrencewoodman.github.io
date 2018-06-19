@@ -1,6 +1,6 @@
 !* commandSubst true variableSubst true
-! source -directory plugins tags.tcl
-! source -directory plugins posts.tcl
+! source -directory [dir plugins] tags.tcl
+! source -directory [dir plugins] posts.tcl
 ! set title [getparams title]
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <header>

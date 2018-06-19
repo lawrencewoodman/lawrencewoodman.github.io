@@ -5,18 +5,18 @@ source -directory plugins tags.tcl
 proc makePartialContent {file filename} {
   set content [ornament \
       -params $file \
-      -directory [file join content posts] \
+      -directory [dir content posts] \
       $filename
   ]
   return [markdown $content]
 }
 
 # TODO: sort in date order
-set files [read -directory [file join content posts] details.list]
+set files [read -directory [dir content posts] details.list]
 
 set files [lmap file $files {
   dict set file destination [file join \
-      [getvar build destination] \
+      [dir destination] \
       [getvar site baseurl] \
       blog \
       [posts::makeDestination [dict get $file filename]]
