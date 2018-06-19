@@ -1,7 +1,7 @@
 namespace eval layout {
   namespace export {[a-z]*}
   namespace ensemble create
-  variable config [read -directory layouts config.dict]
+  variable config [read -directory [dir layouts] config.dict]
 }
 
 proc layout::render {layoutFilename content params} {
