@@ -16,7 +16,7 @@ proc writeTagPage {tag posts} {
   set content [ornament \
       -params $params \
       -directory [dir content blog] \
-      tag.html
+      -file tag.html
   ]
   write $destination [layout::render default.tpl $content $params]
 }

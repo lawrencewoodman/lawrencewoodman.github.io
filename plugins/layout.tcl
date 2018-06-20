@@ -13,7 +13,7 @@ proc layout::render {layoutFilename content params} {
   }
   dict set params content $content
   set content [
-    ornament -params $params -directory [dir layouts] $layoutFilename
+    ornament -params $params -directory [dir layouts] -file $layoutFilename
   ]
   if {![dict exists $config $layoutFilename layout]} {
     return $content

@@ -14,6 +14,6 @@ set params [dict create menuOption blog url /blog/index.html posts $posts]
 set content [ornament \
     -params $params \
     -directory [dir content blog] \
-    index.html
+    -file index.html
 ]
 write $destination [layout::render default.tpl $content $params]

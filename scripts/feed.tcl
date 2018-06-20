@@ -10,5 +10,5 @@ set destination [file join \
     feed.xml
 ]
 set params [dict create posts $posts]
-set content [ornament -params $params -directory content feed.xml]
+set content [ornament -params $params -directory [dir content] -file feed.xml]
 write $destination $content

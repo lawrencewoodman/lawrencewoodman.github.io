@@ -9,6 +9,6 @@ set params [dict create menuOption home url /index.html]
 set content [ornament \
     -params $params \
     -directory content \
-    index.html
+    -file index.html
 ]
 write $destination [layout::render default.tpl $content $params]
