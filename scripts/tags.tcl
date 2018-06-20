@@ -1,4 +1,5 @@
 source -directory [dir plugins] layout.tcl
+source -directory [dir plugins] posts.tcl
 source -directory [dir plugins] tags.tcl
 
 proc writeTagPage {tag posts} {
@@ -21,12 +22,7 @@ proc writeTagPage {tag posts} {
   write $destination [layout::render default.tpl $content $params]
 }
 
-set allPosts [lsort \
-  -command {apply {{a b} {expr {[dict get $a date] - [dict get $b date]}}}} \
-  -decreasing \
-  [collection posts]
-]
-
+set allPosts [posts::sort [collection posts]]
 set files [read -directory [dir content posts] details.list]
 set tags [tags::collect tags $files]
 tags::generatePages $allPosts writeTagPage $tags

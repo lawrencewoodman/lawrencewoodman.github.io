@@ -112,3 +112,12 @@ proc posts::starRating {rating} {
 
   return "$htmlOutput"
 }
+
+# Sort posts in decreasing date order
+proc posts::sort {posts} {
+  return [lsort -command [namespace which CompareDate] -decreasing $posts]
+}
+
+proc posts::CompareDate {a b} {
+  return [expr {[dict get $a date] - [dict get $b date]}]
+}

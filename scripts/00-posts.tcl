@@ -6,7 +6,7 @@ proc makePartialContent {file filename} {
   set content [ornament \
       -params $file \
       -directory [dir content posts] \
-      $filename
+      -file $filename
   ]
   return [markdown $content]
 }
