@@ -1,4 +1,5 @@
 !* commandSubst true
+! source -directory [dir plugins] www.tcl
 <ul class="posts">
 ! set numPosts 0
 ! foreach post [getparam posts] {
@@ -13,4 +14,4 @@
 </ul>
 
 
-  <p id="rss-subscribe">Subscribe <a href="[getvar site baseurl]/feed.xml">via Atom</a></p>
+  <p id="rss-subscribe">Subscribe <a href="[www::url "/feed.xml"]">via Atom</a></p>

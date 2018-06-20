@@ -12,9 +12,9 @@
   <meta name="description" content="$desc">
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
-  <link rel="canonical" href="[www::canonicalURL [getparam url]]">
+  <link rel="canonical" href="[www::url -canonical [getparam url]]">
   <link rel="alternate" type="application/rss+xml" title="[getvar site title]"
-        href="[getvar site url][getvar site baseurl]/feed.xml" />
+        href="[www::url -full "/feed.xml"]" />
 
 !* commandSubst false
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
