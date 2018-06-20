@@ -3,7 +3,7 @@
   <subtitle>Random things that catch my eye that don't have a natural home elsewhere.</subtitle>
   <link href="https://lawrencewoodman.github.io/feed.xml" rel="self"/>
   <link href="https://lawrencewoodman.github.io"/>
-  <updated>2018-06-16</updated>
+  <updated>2018-06-20</updated>
   <id>https://lawrencewoodman.github.io/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -50,6 +50,20 @@ On War by Carl von </summary>
         <summary>I finished level 1 of Say Something in Welsh about five months ago and was pleased with the results.  It feels like a very natural way to learn a language and the course is great but left me unsure about the pronunciation of some words.  In particular it is hard to differentiate sometimes between f (</summary>
     </entry>
     <entry>
+      <title>Books Read in 2015</title>
+      <id>https://lawrencewoodman.github.io/blog/2016/01/01/books-read-in-2015/</id>
+      <link href="https://lawrencewoodman.github.io/blog/2016/01/01/books-read-in-2015/"/>
+        <published>
+          2016-01-01
+        </published>
+
+        <updated>
+          2016-01-01
+        </updated>
+
+        <summary>The following is a list of the books I read and wrote brief reviews for in 2015.  I find book reviews hard to write, partly as I am reluctant to jot down notes as I read the book for fear of not fully immersing myself in the tale.  So while the reviews don't do the books justice, I do however, like t</summary>
+    </entry>
+    <entry>
       <title>One Month into Say Something in Welsh Course</title>
       <id>https://lawrencewoodman.github.io/blog/2015/11/18/one-month-into-say-something-in-welsh/</id>
       <link href="https://lawrencewoodman.github.io/blog/2015/11/18/one-month-into-say-something-in-welsh/"/>
@@ -90,19 +104,5 @@ On War by Carl von </summary>
         </updated>
 
         <summary>I have wanted to learn to speak another language for a long time, but have either lacked motivation, commitment or felt that I didn't have the time.  I have also had trouble deciding which language to learn as there are a few that I'm interested in for different reasons.  I have decided to post about</summary>
-    </entry>
-    <entry>
-      <title>Books Read in 2015</title>
-      <id>https://lawrencewoodman.github.io/blog/2015/01/01/books-read-in-2015/</id>
-      <link href="https://lawrencewoodman.github.io/blog/2015/01/01/books-read-in-2015/"/>
-        <published>
-          2015-01-01
-        </published>
-
-        <updated>
-          2015-01-01
-        </updated>
-
-        <summary>The following is a list of the books I read and wrote brief reviews for in 2015.  I find book reviews hard to write, partly as I am reluctant to jot down notes as I read the book for fear of not fully immersing myself in the tale.  So while the reviews don't do the books justice, I do however, like t</summary>
     </entry>
 </feed>
