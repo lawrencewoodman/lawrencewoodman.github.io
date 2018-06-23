@@ -1,7 +1,7 @@
 !* commandSubst true variableSubst true
 ! source -directory [dir plugins] www.tcl
-! set title [getparam -default [getvar site title] title]
-! set desc [getparam -default [getvar site description] summary]
+! set title [getparam -default [www::var title] title]
+! set desc [getparam -default [www::var description] summary]
 ! set desc [string range $desc 0 160]
 <head>
   <meta charset="utf-8">
@@ -13,7 +13,7 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <link rel="canonical" href="[www::url -canonical [getparam url]]">
-  <link rel="alternate" type="application/rss+xml" title="[getvar site title]"
+  <link rel="alternate" type="application/rss+xml" title="[www::var title]"
         href="[www::url -full "/feed.xml"]" />
 
 !* commandSubst false

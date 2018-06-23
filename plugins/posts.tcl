@@ -1,6 +1,7 @@
 namespace eval posts {
   namespace export {[a-z]*}
   namespace ensemble create
+  source -directory [dir plugins] www.tcl
 }
 
 proc posts::makeDate {post} {
@@ -29,26 +30,28 @@ proc posts::makeExcerpt {partialContent} {
   return [string range [strip_html $partialContent] 0 300]
 }
 
-proc posts::makeDestination {filename} {
+# url is where the destination should be based off, such as blog
+proc posts::makeDestination {url filename} {
   set filename [file tail $filename]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return [file join $year $month $day $titleDir index.html]
+    return [www::makeDestination $url $year $month $day $titleDir index.html]
   }
   # TODO: Raise an error
 }
 
-proc posts::makeURL {filename} {
+# url is where the url should be based off, such as blog
+proc posts::makeURL {url filename} {
   set filename [file tail $filename]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return "$year/$month/$day/$titleDir/"
+    return "[www::url $url $year $month $day $titleDir]/"
   }
-  # TODO: Raise an error
+  return -code error "makeURL: invalid filename: $filename"
 }
 
 # Return any posts related to the supplied post. This is done by looking

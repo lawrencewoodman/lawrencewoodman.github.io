@@ -1,14 +1,11 @@
 source -directory [dir plugins] layout.tcl
 source -directory [dir plugins] posts.tcl
 source -directory [dir plugins] tags.tcl
+source -directory [dir plugins] www.tcl
 
 proc writeTagPage {tag posts} {
   set tagDirName [tags::toDirName $tag]
-  set destination [file join \
-      [dir destination] \
-      [getvar site baseurl] \
-      blog tag $tagDirName index.html
-  ]
+  set destination [www::makeDestination blog tag $tagDirName index.html]
   set params [dict create \
     menuOption blog tag $tag posts $posts \
     url /blog/tag/$tagDirName/index.html \

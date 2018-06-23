@@ -1,19 +1,19 @@
 !* commandSubst true
 ! source -directory [dir plugins] www.tcl
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>[getvar site title]</title>
-! if {[getvar -noerror site subtitle] ne ""} {
-  <subtitle>[getvar site subtitle]</subtitle>
+  <title>[www::var title]</title>
+! if {[www::var -noerror subtitle] ne ""} {
+  <subtitle>[www::var subtitle]</subtitle>
 ! }
   <link href="[www::url -full "/feed.xml"]" rel="self"/>
-  <link href="[www::url -full ""]"/>
+  <link href="[www::var url]"/>
   <updated>[clock format [clock seconds] -format {%Y-%m-%d}]</updated>
   <id>[www::url -full "/feed.xml"]</id>
-! if {[getvar -noerror site author] ne ""} {
+! if {[www::var -noerror author] ne ""} {
     <author>
-      <name>[getvar site author name]</name>
-      <email>[getvar site author email]</email>
-      <uri>[getvar site author url]</uri>
+      <name>[www::var author name]</name>
+      <email>[www::var author email]</email>
+      <uri>[www::var author url]</uri>
     </author>
 ! }
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>

@@ -1,10 +1,6 @@
 source -directory plugins layout.tcl
-set destination [file join \
-    [dir destination] \
-    [getvar site baseurl] \
-    index.html
-]
-
+source -directory plugins www.tcl
+set destination [www::makeDestination index.html]
 set params [dict create menuOption home url /index.html]
 set content [ornament \
     -params $params \

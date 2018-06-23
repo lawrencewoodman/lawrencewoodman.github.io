@@ -1,11 +1,12 @@
 namespace eval starRating {
   namespace export {[a-z]*}
+  source -directory [dir plugins] www.tcl
 }
 
 # Displays the rating as a series of stars
 # Images msut be stored in [dir starImages]
 proc starRating::starRating {rating} {
-  set imagesURL [getvar plugins starRating imagesURL]
+  set imagesURL [www::url [getvar plugins starRating imagesURL]]
   set starImgTag "<img src=\"$imagesURL/%s\" alt=\"%.1f/5.0\" />"
 
   set wholeStars [expr {floor($rating)}]

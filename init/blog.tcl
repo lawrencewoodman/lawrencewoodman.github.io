@@ -1,11 +1,8 @@
 source -directory [dir plugins] layout.tcl
 source -directory [dir plugins] posts.tcl
+source -directory [dir plugins] www.tcl
 
-set destination [file join \
-    [dir destination] \
-    [getvar site baseurl] \
-    blog index.html
-]
+set destination [www::makeDestination blog index.html]
 set posts [posts::sort [collection posts]]
 set params [dict create menuOption blog url /blog/index.html posts $posts]
 set content [ornament \

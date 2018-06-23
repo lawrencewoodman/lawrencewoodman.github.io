@@ -15,14 +15,11 @@ proc makePartialContent {file filename} {
 set files [read -directory [dir content posts] details.list]
 
 set files [lmap file $files {
-  dict set file destination [file join \
-      [dir destination] \
-      [getvar site baseurl] \
-      blog \
-      [posts::makeDestination [dict get $file filename]]
+  dict set file destination [
+    posts::makeDestination blog [dict get $file filename]
   ]
   dict set file tags [lsort [dict get $file tags]]
-  dict set file url "/blog/[posts::makeURL [dict get $file filename]]"
+  dict set file url  [posts::makeURL /blog [dict get $file filename]]
   dict set file date [posts::makeDate $file]
   dict set file menuOption article
   set file

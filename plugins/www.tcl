@@ -18,12 +18,15 @@ proc www::url {args} {
       default break
     }
   }
-  if {[llength $args] != 1} {
+  if {[llength $args] == 0} {
     return -code error "url: invalid number of arguments"
   }
-  lassign $args url
-  set url [getvar plugins www baseurl]$url
-
+  set urlParts [lmap p $args {string trimleft $p "/"}]
+  set url [join $urlParts "/"]
+  if {[getvar plugins www baseurl] ne ""} {
+    set url "[getvar plugins www baseurl]/$url"
+  }
+  set url "/$url"
   if {$options(canonical) || $options(full)} {
     set url [getvar plugins www url]$url
   }
@@ -35,4 +38,26 @@ proc www::url {args} {
     }
   }
   return $url
+}
+
+proc www::makeDestination {args} {
+  return [file join [dir destination] [var baseurl] {*}$args]
+}
+
+proc www::var {args} {
+  array set options {noerror 0 default {}}
+  while {[llength $args]} {
+    switch -glob -- [lindex $args 0] {
+      -noerror {set options(noerror) 1 ; set args [lrange $args 1 end]}
+      -default {set args [lassign $args - options(default)]}
+      --      {set args [lrange $args 1 end] ; break}
+      -*      {error "var: unknown option [lindex $args 0]"}
+      default break
+    }
+  }
+  set getCmd [list getvar -default $options(default)]
+  if {$options(noerror)} {
+    lappend getCmd -noerror
+  }
+  {*}$getCmd plugins www {*}$args
 }
