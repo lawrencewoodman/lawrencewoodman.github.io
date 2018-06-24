@@ -29,7 +29,7 @@ foreach file $files {
   dict set file relatedPosts [posts::makeRelated $files $file]
   set partialContent [makePartialContent $file [dict get $file filename]]
   dict set file summary [posts::makeExcerpt $partialContent]
-  collect posts $file
+  collection add posts $file
   write [dict get $file destination] \
         [layout::render post.tpl $partialContent $file]
 }

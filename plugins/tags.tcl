@@ -29,7 +29,7 @@ proc tags::collect {collectionName files} {
     foreach tag [dict get $file tags] {
       if {[lsearch $allTags $tag] == -1} {
         lappend allTags $tag
-        ::collect $collectionName $tag
+        ::collection add $collectionName $tag
       }
     }
   }

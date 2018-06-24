@@ -19,7 +19,7 @@ proc writeTagPage {tag posts} {
   write $destination [layout::render default.tpl $content $params]
 }
 
-set allPosts [posts::sort [collection posts]]
+set allPosts [posts::sort [collection get posts]]
 set files [read -directory [dir content posts] details.list]
 set tags [tags::collect tags $files]
 tags::generatePages $allPosts writeTagPage $tags
