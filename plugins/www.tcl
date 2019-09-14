@@ -57,7 +57,7 @@ proc www::var {args} {
   }
   set getCmd [list getvar -default $options(default)]
   if {$options(noerror)} {
-    lappend getCmd -noerror
+    lappend getCmd
   }
   {*}$getCmd plugins www {*}$args
 }
