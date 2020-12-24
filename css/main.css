@@ -3,7 +3,6 @@ html,body {
 }
 
 div#content {
-  margin-top: 60px;
 }
 
 .star-rating {
@@ -42,6 +41,20 @@ img.logo-stackoverflow {
 img.logo-gplus {
   display: inline-block;
   height: 40px;
+}
+
+h2,h3 {
+  font-weight: bold;
+}
+
+a h2,h3 {
+  margin-top: 0;
+  color: black
+}
+
+a:hover h2,h3  {
+  color: #444;
+  text-decoration: none !important;
 }
 
 ul.posts {
@@ -104,38 +117,45 @@ div#frontPage {
   margin-top: 2em;
 }
 
-div#frontPage div.screenshot a {
+div#frontPage img.screenshot {
+  clear: left;
+  float: left;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+div.profile {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+/*
+div#frontPage div.profile a h3 {
   color: black;
 }
 
-div#frontPage div.screenshot a:hover {
+
+div#frontPage div.profile a:hover>h3 {
   color: #444;
-  font-weight: bold;
   text-decoration: none;
 }
+*/
 
-div#frontPage div.screenshot a p {
+img.profile-image {
+  margin-bottom: 1em;
+  border-radius: 30px;
+}
+
+div.profile-contact {
   margin-top: 1em;
-  line-height: 1.5;
+  padding-bottom: 0.5em;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
 }
 
-div#frontPage ul {
-  padding-left: 1em;
-}
-
-div#frontPage ul li {
-  list-style: none;
-}
-
-div#frontPage div.profile a {
-  color: black;
-}
-
-
-div#frontPage div.profile a:hover {
-  color: #444;
-  text-decoration: none;
-}
 
 footer {
   margin-top: 50px;
